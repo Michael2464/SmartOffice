@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'blackC': '#0B0C10',
+        'blackC': '#0B0C10', // dark
+        'blackC2': '#13151C', // ligther dark
         'lightBlueC': '#1F2833',
         'whiteC': '#C5C6C7',
         'lightSeaGreenC': '#66FCF1',
