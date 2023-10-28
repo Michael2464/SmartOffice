@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue'
+import RegLog from '../views/RegLog.vue'
 
 const routes: Array<RouteRecordRaw> = [
+  //{
+  //  path: '/',
+  //  name: 'home',
+  //  component: Home
+  //},
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'reglog',
+    component: RegLog
   }
 ];
 

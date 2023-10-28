@@ -45,7 +45,7 @@
     </div>
 
     <div class="flex py-15">
-      <div >
+      <div>
         <p>Our company provides smart offices for any type of organization. kjksjdf we akj aekle ybty rtrev eiuny tv vyiyv iutvnnit vmiutvmi yiuy jiujgi u. ygbuybfu fbuytfuyt fdubtfbut futfutfb utfbtu ftyft bfutyf 5rse35 6htgj 8f56hu7y kg65jut. uynhrdniku tdur nf586dnu t5sbdu fcn65 duyfcn 5rdbu.</p>
       </div>
       <div>
