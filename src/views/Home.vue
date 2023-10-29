@@ -1,6 +1,17 @@
 <template>
   <!-- Information -->
   <div class="bg-blackCL text-whiteC">
+    <!-- Image + Title -->
+    <div class="w-full h-screen bg-no-repeat bg-cover bg-center brightness-50" style="background-image: url('./public/images/skyskipers.png');">
+      <div class="flex justify-center w-full h-full bottom-0 bg-gradient-to-t from-blackCL to-35% brightness-200">
+        <div class="flex-col w-fit h-fit m-auto space-y-4 text-whiteC">
+          <h1 class="w-fit m-auto text-8xl">SmartOffice</h1>
+          <p class="w-fit m-auto text-5xl">Us is your solution!</p>
+          <p class="invisible h-32">#</p>
+        </div>
+      </div>
+    </div>
+
     <div class="py-10">
       <p class="text-center font-semibold text-3xl px-20 items-center">Technology is transforming the workplace, and smart office solutions are at the forefront of this new change</p>
     </div>
@@ -10,11 +21,11 @@
         <h1 class="font-semibold text-xl">Internet of Things (IoT)</h1>
         <p class="inline-block text-left text-xl">Smart office IoT solutions are on the rise and can support you in every area of business. From lights and thermostats to employee management and access control, IoT smart technology is at the heart of the smart office.</p>
       </div>
-      <img class="inline block pr-20 w-2/5 h-auto rounded-lg" src="../assets/images/internet_of_things.png">
+      <img class="inline-block pr-20 w-2/5 h-auto rounded-lg" src="../assets/images/internet_of_things.png">
     </div>
 
     <div class="flex py-12">
-      <img class="inline block pl-20 w-2/5 h-auto rounded-lg" src="../assets/images/interconnectivity.png">
+      <img class="inline-block pl-20 w-2/5 h-auto rounded-lg" src="../assets/images/interconnectivity.png">
       <div class="pl-6">
         <h1 class="font-semibold text-xl">Interconnectivity</h1>
         <p class="inline-block pr-20 text-left text-xl">One of the key components of smart offices is that all of your systems work together to make working environments more efficient, improve productivity and increase safety.</p>
@@ -26,7 +37,7 @@
         <h1 class="font-semibold text-xl">Machine learning</h1>
         <p class="inline-block text-left text-xl">Smart office AI provides deep, data-driven insights that you can utilize to further improve your ways of working in the future. Machine learning capabilities should be built into any smart office design, with real-time data collection to support analysis and future strategy creation.</p>
       </div>
-      <img class="inline block pr-20 w-2/5 h-auto rounded-lg" src="../assets/images/machine_learning.jpg">
+      <img class="inline-block pr-20 w-2/5 h-auto rounded-lg" src="../assets/images/machine_learning.jpg">
     </div>
 
     <div class="flex py-15">
