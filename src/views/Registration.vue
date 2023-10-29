@@ -96,10 +96,6 @@
 
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Raleway:wght@300;400&family=Work+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Raleway:wght@300;400&family=Work+Sans:wght@300&display=swap');
+<style scoped>
 
-#customFont {
-  font-family: 'Noto Sans', sans-serif;
-}</style>
+</style>

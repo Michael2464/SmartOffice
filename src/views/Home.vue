@@ -1,21 +1,6 @@
 <template>
-  <div id="customFont" class="box-border m-0 p-0 text-whiteC bg-blackC w-full bg-cover bg-center">
-    <header class="flex items-center py-4 px-4">
-      <img class="w-30 h-8 rounded-lg" src="../assets/icons/smart_office_temp.png">
-
-      <span class="px-6">
-        <li class="inline-block px-4"><a href="#">Info</a></li>
-        <li class="inline-block px-4"><a href="#">Products</a></li>
-        <li class="inline-block px-4"><a href="#">Contact</a></li>
-      </span>
-      
-      <!-- Later it might be an image -->
-      <p class="ml-auto mr-0">Options</p>
-    </header>
-  </div>
-
   <!-- Information -->
-  <div id="customFont" class="bg-blackCL text-whiteC">
+  <div class="bg-blackCL text-whiteC">
     <div class="py-10">
       <p class="text-center font-semibold text-3xl px-20 items-center">Technology is transforming the workplace, and smart office solutions are at the forefront of this new change</p>
     </div>
@@ -53,30 +38,13 @@
         <!-- Registration here -->
       </div>
     </div>
-
-    <!-- Our Social Networks and other information useful for the clients  -->
-    <div class="flex py-6 bg-blackC">
-      <h1 class="px-8 text-xl">Our social networks: </h1>
-      <div class="flex">
-        <a href=""><img class="w-8 h-8" src="../assets/icons/youtube.png"></a>
-        <a href=""><img class="w-8 h-8" src="../assets/icons/telegram.png"></a>
-        <a href=""><img class="w-8 h-8" src="../assets/icons/vk.png"></a>
-      </div>
-    </div>
-
   </div>
-  <!-- <router-view /> -->
 </template>
 
 <script setup lang="ts">
 
 </script>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Raleway:wght@300;400&family=Work+Sans:wght@300&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&family=Raleway:wght@300;400&family=Work+Sans:wght@300&display=swap');
-  
-  #customFont {
-    font-family: 'Noto Sans', sans-serif;
-  }
+<style scoped>
+
 </style>
