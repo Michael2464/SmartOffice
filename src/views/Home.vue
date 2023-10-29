@@ -15,7 +15,7 @@
   </div>
 
   <!-- Information -->
-  <div id="customFont" class="bg-blackC2 text-whiteC">
+  <div id="customFont" class="bg-blackCL text-whiteC">
     <div class="py-10">
       <p class="text-center font-semibold text-3xl px-20 items-center">Technology is transforming the workplace, and smart office solutions are at the forefront of this new change</p>
     </div>

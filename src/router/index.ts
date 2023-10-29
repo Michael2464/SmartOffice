@@ -3,16 +3,16 @@ import Home from '../views/Home.vue'
 import RegLog from '../views/RegLog.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  //{
-  //  path: '/',
-  //  name: 'home',
-  //  component: Home
-  //},
   {
     path: '/',
-    name: 'reglog',
-    component: RegLog
+    name: 'home',
+    component: Home
   }
+  //{
+  //  path: '/',
+  //  name: 'reglog',
+  //  component: RegLog
+  //}
 ];
 
 const router = createRouter({
