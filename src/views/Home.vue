@@ -1,10 +1,13 @@
 <template>
   <!-- Information -->
-  <div class="bg-blackCL text-whiteC">
+  <div class="bg-baseColor text-baseWhite">
     <!-- Image + Title -->
-    <div class="w-full h-[calc(100vh-160px)] mb-20 bg-no-repeat bg-cover bg-center" style="background-image: url('./public/images/skyskipers.png');">
-      <div class="flex justify-center w-full h-full bottom-0 bg-gradient-to-t from-blackCL to-20%">
-        <div class="flex-col w-fit h-fit m-auto space-y-4 text-whiteC">
+    <div
+      class="w-full h-[calc(100vh-160px)] mb-20 bg-no-repeat bg-cover bg-center"
+      style="background-image: url('./public/images/skyskipers.png');"
+    >
+      <div class="flex justify-center w-full h-full bottom-0 bg-gradient-to-t from-baseColor to-20%">
+        <div class="flex-col w-fit h-fit m-auto space-y-4 text-baseWhite">
           <h1 class="w-fit m-auto text-8xl">SmartOffice</h1>
           <p class="w-fit m-auto text-5xl">Us is your solution!</p>
         </div>

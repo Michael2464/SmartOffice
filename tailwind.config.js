@@ -7,13 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'blackC': '#0B0C10', // dark
-        'blackCL': '#13151C', // ligther dark
-        'darkBlueC': '#282D40',
-        'lightBlueC': '#3D77DB',
-        'whiteC': '#C5C6C7',
-        'lightSeaGreenC': '#66FCF1',
-        'darkCyanC': '#45A29E',
+        'baseWhite': '#FFFFFF',
+        'baseBlack': '#000000',
+
+        'lightColor': '#676F9D',
+        'baseColor': '#424769',
+        'darkColor': '#2D3250',
+        'baseAccent': '#F9B17A',
+        'darkAccent': '#F68631',
       },
     },
   },
