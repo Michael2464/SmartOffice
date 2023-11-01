@@ -93,7 +93,7 @@
 
         <div class="flex justify-center">
           <input
-            class="rounded-md px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
+            class="rounded-md mt-3 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
             type="submit"
             value="Sign Up"
           >

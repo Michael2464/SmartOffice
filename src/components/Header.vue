@@ -10,12 +10,6 @@
 			<router-link to="/b">Products</router-link>
 			<router-link to="/c">Contact</router-link>
 		</nav>
-
-	  <!-- <span class="h-full">
-	    <li class="inline-block"><a href="#">Info</a></li>
-	    <li class="inline-block"><a href="#">Products</a></li>
-	    <li class="inline-block"><a href="#">Contact</a></li>
-	  </span> -->
   
 	  <!-- Later it might be an image -->
 	  <button class="ml-auto p-4">Options</button>

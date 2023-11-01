@@ -10,11 +10,11 @@ export default {
         'baseWhite': '#FFFFFF',
         'baseBlack': '#000000',
 
-        'lightColor': '#676F9D',
-        'baseColor': '#424769',
-        'darkColor': '#2D3250',
-        'baseAccent': '#F9B17A',
-        'darkAccent': '#F68631',
+        'lightColor': '#676F9D', // light blue
+        'baseColor': '#424769',  // a bit darker blue
+        'darkColor': '#2D3250',  // dark blue
+        'baseAccent': '#F9B17A', // light orange
+        'darkAccent': '#F68631', // dark orange
       },
     },
   },
