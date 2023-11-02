@@ -1,7 +1,7 @@
 <template>
 	<div
     class="flex w-full h-[calc(100vh-160px)] bg-center bg-no-repeat bg-cover"
-    style="background-image: url('./images/skyskipers.png')"
+    style="background-image: url('/images/skyskipers.png')"
   >
 		<div class="rounded-lg space-y-2 p-4 m-auto bg-baseColor text-baseWhite">
 			<div class="space-y-0.5">

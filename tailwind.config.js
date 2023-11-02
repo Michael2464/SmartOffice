@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        '4/3': '4/3',
+      },
       colors: {
         'baseWhite': '#FFFFFF',
         'baseBlack': '#000000',
