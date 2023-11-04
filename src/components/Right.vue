@@ -1,5 +1,6 @@
 <template>
 	<div class="flex items-center justify-between space-x-8">
+
 		<div class="w-auto h-fit space-y-2">
 			<h3 class="font-semibold text-2xl">
 				{{ title }}
@@ -11,6 +12,7 @@
 			</div>
 		</div>
 		<img class="w-auto h-64 rounded-lg aspect-4/3" :src="image">
+		
 	</div>
 </template>
 

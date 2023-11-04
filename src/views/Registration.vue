@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="flex w-full h-[calc(100vh-160px)] bg-center bg-no-repeat bg-cover"
-    style="background-image: url('./public/images/skyskipers.png')"
-  >
+  <div>
     <div class="rounded-2xl w-fit m-auto text-baseWhite bg-baseColor">
       <form class="p-2" action="#">
         <div class="p-2">

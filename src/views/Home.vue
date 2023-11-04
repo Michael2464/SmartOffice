@@ -3,7 +3,7 @@
   <div class="flex flex-col items-center bg-baseColor text-baseWhite">
     <Welcome />
 
-    <div class="w-4/5 space-y-2">
+    <div class="w-4/5 space-y-6">
       <div class="mb-8">
         <p class="text-center font-semibold text-5xl">Technology is transforming the workplace, and smart office solutions are at the forefront of this new change</p>
       </div>
@@ -41,13 +41,13 @@
           `Indoor positioning through a combination of GPS, Bluetooth beacon and inertial sensor information.`,
           `Superb accuracy and battery-efficience`
         ]"
-        image="/images/machine_learning.jpg"
+        image="/images/office_navigation.jpg"
       />
     </div>
 
-    <div class="w-full flex justify-center py-8 mt-8 bg-darkColor">
+    <div class="w-full flex justify-center py-10 mt-10 bg-darkColor">
       <div class="w-4/5 h-fit flex justify-between">
-        <div class="space-y-2">
+        <div class="space-y-3">
           <p class="text-xl font-semibold">The functionality of the platform is limitless and, by adapting to the company's tasks,<br>can provide the employee with all the services he or she needs.</p>
           <p class="text-lg">It combines autonomous engineering systems and<br>a convenient digital environment into one platform and offers:</p>
           <p class="text-lg ml-4">1. A system to handle climate, lighting</p>
@@ -55,11 +55,11 @@
           <p class="text-lg ml-4">3. Navigation inside the office, face id access, AI and other</p>
         </div>
 
-        <div class="space-y-2">
+        <div class="space-y-3">
           <p>If you'd like to purchase our SmartOffice platform, fill the form below, we'll contact you soon!</p>
           <!-- Registration here -->
         
-          <div class="text-xl space-y-2">
+          <div class="text-xl space-y-3">
             <div class="flex space-x-2">
               <span>Full Name:</span>
               <input @input="e => full_name = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
@@ -96,7 +96,7 @@
       <p class="text-xl">For more information about the product and company, see</p>
       <input
         class="rounded-md m-auto mt-2 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-        type="submit" @click="submit" value="Info" 
+        type="submit" value="Info" 
       >
     </div>
   </div>
