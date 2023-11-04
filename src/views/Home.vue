@@ -62,33 +62,30 @@
           <div class="text-xl space-y-2">
             <div class="flex space-x-2">
               <span>Full Name:</span>
-              <input name="full_name" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
+              <input @input="e => full_name = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
                 placeholder="Enter you full name" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Company:</span>
-              <input name="company" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
-                placeholder="Enter company name" required>
+              <input @input="e => company = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter company name" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Phone number:</span>
-              <input name="phone_number" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
-                placeholder="Enter number" required>
+              <input @input="e => phone_number = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter number" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Email:</span>
-              <input name="email" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter email"
-                required>
+              <input @input="e => email = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter email" required>
             </div>
           </div>
         
           <div class="flex justify-center">
             <input
               class="rounded-md mt-2 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-              type="submit" value="Submit"
+              type="submit" @click="submit" value="Submit"
             >
           </div>
         </div>
@@ -99,16 +96,52 @@
       <p class="text-xl">For more information about the product and company, see</p>
       <input
         class="rounded-md m-auto mt-2 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-        type="submit" value="Info"
+        type="submit" @click="submit" value="Info" 
       >
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  // @ts-nocheck
+  import { ref } from 'vue';
+
   import Welcome from '../components/Welcome.vue';
   import Left from '../components/Left.vue';
   import Right from '../components/Right.vue';
+
+  const full_name = ref('');
+  const company = ref('');
+  const phone_number = ref('');
+  const email = ref('');
+
+  async function submit() {
+    const A: string = full_name.value;
+    const B: string = company.value;
+    const C: string = phone_number.value;
+    const D: string = email.value;
+
+    full_name.value = '';
+    company.value = '';
+    phone_number.value = '';
+    email.value = '';
+
+    if ( A !== '' && B !== '' && C !== '' && D !== '' ) {
+      const response = await fetch(`http://127.0.0.1:8000/?full_name=${A}&company=${B}&phone_number=${C}&email=${D}`,
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+      response.json();
+    } else {
+      alert('Нельзя оставлять поля пустыми!')
+    };
+  };
+  
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
