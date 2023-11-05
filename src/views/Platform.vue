@@ -6,16 +6,19 @@
       <Option 
         title = "News" 
         image = "/images/news.png" 
+        link = "/news"
       />
 
       <Option 
         title = "Contacts" 
         image = "/images/contacts.png" 
+        link = "/contacts"
       />
 
       <Option 
         title = "Documents" 
-        image = "/images/documents.png" 
+        image = "/images/documents.png"
+        link = "" 
       />
 
     </div>
@@ -24,17 +27,20 @@
 
       <Option 
         title = "Surrounding" 
-        image = "/images/surrounding.png" 
+        image = "/images/surrounding.png"
+        link = "" 
       />
 
       <Option 
         title = "Navigation" 
-        image = "/images/navigation.png" 
+        image = "/images/navigation.png"
+        link = "" 
       />
 
       <Option 
         title = "Local Services" 
-        image = "/images/localServices.png" 
+        image = "/images/localServices.png"
+        link = "" 
       />
 
     </div>
@@ -46,8 +52,10 @@
 
 <script setup lang="ts">
 
-import Option from '../components/Option.vue';
+  import Option from '../components/Option.vue';
 
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

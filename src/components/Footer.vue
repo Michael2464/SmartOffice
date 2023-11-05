@@ -3,9 +3,9 @@
 	<footer class="flex px-8 py-6 bg-darkColor text-baseWhite">
 	  <h1 class="pe-4 text-xl">Our social networks: </h1>
 	  <div class="flex space-x-3">
-	    <a href=""><img class="w-8 h-8" src="/images/youtube.png"></a>
-	    <a href=""><img class="w-8 h-8" src="/images/telegram.png"></a>
-	    <a href=""><img class="w-8 h-8" src="/images/vk.png"></a>
+	    <a href=""><img class="w-8 h-8" src="/icons/youtube.png"></a>
+	    <a href=""><img class="w-8 h-8" src="/icons/telegram.png"></a>
+	    <a href=""><img class="w-8 h-8" src="/icons/vk.png"></a>
 	  </div>
 	</footer>
 </template>

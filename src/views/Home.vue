@@ -55,7 +55,7 @@
           <p class="text-lg ml-4">3. Navigation inside the office, face id access, AI and other</p>
         </div>
 
-        <div class="space-y-3">
+        <div class="space-y-3 inline max-w-lg">
           <p>If you'd like to purchase our SmartOffice platform, fill the form below, we'll contact you soon!</p>
           <!-- Registration here -->
         
@@ -135,9 +135,9 @@
         }
       );
       response.json();
-    } else {
-      alert('Нельзя оставлять поля пустыми!')
-    };
+    } //else {
+      //alert('Нельзя оставлять поля пустыми!')
+    //};
   };
   
 </script>

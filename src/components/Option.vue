@@ -1,9 +1,12 @@
 <template>
   <div class="py-10">
-    <button>
-      <img class="w-auto h-48 rounded-lg aspect-4/3" :src="image">
-    </button>
-    <p class="text-center text-2xl">{{title}}</p>
+    <nav>
+			<router-link :to="link">
+        <img class="w-auto h-48 rounded-lg aspect-4/3 border-solid border-baseWhite 
+                  duration-75 hover:border-2" :src="image">
+      </router-link>
+		</nav>
+    <p class="text-center mt-2 text-2xl w-64">{{title}}</p>
   </div>
 </template>
 
@@ -12,6 +15,7 @@
 defineProps<{
   title: string
   image: string
+  link: string
 }>();
 </script>
 
