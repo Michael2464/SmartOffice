@@ -62,23 +62,22 @@
           <div class="text-xl space-y-2">
             <div class="flex space-x-2">
               <span>Full Name:</span>
-              <input @input="e => full_name = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text"
-                placeholder="Enter you full name" required>
+              <input v-model="full_name" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter you full name" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Company:</span>
-              <input @input="e => company = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter company name" required>
+              <input v-model="company" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter company name" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Phone number:</span>
-              <input @input="e => phone_number = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter number" required>
+              <input v-model="phone_number" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter number" required>
             </div>
           
             <div class="flex space-x-2">
               <span>Email:</span>
-              <input @input="e => email = e.target?.value" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter email" required>
+              <input v-model="email" class="bg-lightColor grow rounded-md px-2 py-1" type="text" placeholder="Enter email" required>
             </div>
           </div>
         
@@ -116,24 +115,29 @@
   const email = ref('');
 
   async function submit() {
-    const A: string = full_name.value;
-    const B: string = company.value;
-    const C: string = phone_number.value;
-    const D: string = email.value;
-
-    full_name.value = '';
-    company.value = '';
-    phone_number.value = '';
-    email.value = '';
-
-    if ( A !== '' && B !== '' && C !== '' && D !== '' ) {
-      const response = await fetch(`http://127.0.0.1:8000/?full_name=${A}&company=${B}&phone_number=${C}&email=${D}`,
+    if ( full_name.value !== '' && company.value !== '' && phone_number.value !== '' && email.value !== '' ) {
+      const response = await fetch(`http://127.0.0.1:8000/questionnaire`,
         {
           method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" }
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          },
+          body: JSON.stringify({
+            "fullName": full_name.value,
+            "company": company.value,
+            "phone": phone_number.value,
+            "email": email.value
+          })
         }
       );
+
+      full_name.value = '';
+      company.value = '';
+      phone_number.value = '';
+      email.value = '';
+
       response.json();
     } else {
       alert('Нельзя оставлять поля пустыми!')
