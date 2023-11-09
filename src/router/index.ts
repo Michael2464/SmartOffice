@@ -3,6 +3,9 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from './../views/Home.vue';
 import Login from '../views/Login.vue';
 import Registration from '../views/Registration.vue';
+import Platform from '../views/Platform.vue';
+import News from '../views/News.vue';
+import Contacts from '../views/Contacts.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,6 +22,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/registration',
     name: 'registration',
     component: Registration
+  },
+  {
+    path: '/platform',
+    name: 'platform',
+    component: Platform
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: News
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: Contacts
   }
 ];
 
