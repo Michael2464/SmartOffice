@@ -1,6 +1,5 @@
 <template>
-  <div class="flex flex-col items-center bg-baseColor text-baseWhite">
-
+  <div class="w-full h-[calc(100vh-160px)] flex flex-col items-center justify-center bg-baseColor text-baseWhite">
     <h1 class="text-center text-3xl font-semibold my-6">Company Contacts</h1>
 
     <div class="text-xl space-y-3 max-w-lg mt-3">
