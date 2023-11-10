@@ -2,8 +2,7 @@
   <div class="py-10">
     <nav>
 			<router-link :to="link">
-        <img class="w-auto h-48 rounded-lg aspect-4/3 border-solid border-baseWhite 
-                  duration-75 hover:border-2" :src="image">
+        <img class="w-auto h-48 rounded-lg aspect-4/3 border-solid border-baseWhite duration-75 hover:border-2" :src="image">
       </router-link>
 		</nav>
     <p class="text-center mt-2 text-2xl w-64">{{title}}</p>

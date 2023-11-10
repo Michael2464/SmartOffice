@@ -82,10 +82,7 @@
           </div>
         
           <div class="flex justify-center">
-            <input
-              class="rounded-md mt-2 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-              type="submit" @click="submit" value="Submit"
-            >
+            <Button class="mt-1.5" @click="submit" text="Submit" />
           </div>
         </div>
       </div>
@@ -93,10 +90,7 @@
 
     <div class="flex flex-col justify-center py-12 bg-baseColor">
       <p class="text-xl">For more information about the product and company, see</p>
-      <input
-        class="rounded-md m-auto mt-2 px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-        type="submit" value="Info" 
-      >
+      <Button class="m-auto mt-2" text="Info" />
     </div>
   </div>
 </template>
@@ -108,6 +102,8 @@
   import Welcome from '../components/Welcome.vue';
   import Left from '../components/Left.vue';
   import Right from '../components/Right.vue';
+
+  import Button from '../components/Button.vue';
 
   const full_name = ref('');
   const company = ref('');
@@ -139,11 +135,10 @@
       email.value = '';
 
       response.json();
-    } //else {
-      //alert('Нельзя оставлять поля пустыми!')
-    //};
+    } else {
+      alert('Нельзя оставлять поля пустыми!')
+    };
   };
-  
 </script>
 
 <style scoped>

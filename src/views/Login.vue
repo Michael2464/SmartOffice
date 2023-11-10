@@ -10,11 +10,17 @@
 			</div>
 			<div class="flex flex-col place-items-center content-center rounded-md bg-lightColor ps-1">
 				<span class="w-full p-0.5 text-left">Login:</span>
-				<input class="w-full rounded-md p-1 bg-lightColor" type="text">
+				<input v-model="login" class="w-full rounded-md p-1 bg-lightColor" type="text">
 			</div>
 			<div class="flex flex-col place-items-center content-center rounded-md bg-lightColor ps-1">
 				<span class="w-full p-0.5 text-left">Password:</span>
-				<input class="w-full rounded-md p-1 bg-lightColor" type="password">
+				<div class="flex w-full">
+					<input v-model="password" id="password" class="w-[calc(100%-32px)] rounded-md p-1 bg-lightColor" type="password">
+					<div class="w-8 h-8 shrink-0 me-0.5" @click="passwordVisible">
+						<div id="visible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat visible" style="background-image: url('/icons/visibility.svg');"></div>
+						<div id="invisible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat invisible" style="background-image: url('/icons/visibility_off.svg');"></div>
+					</div>
+				</div>
 			</div>
 			<div class="flex space-x-8">
 				<div class="space-x-1">
@@ -26,19 +32,61 @@
 				</div>
 			</div>
 			<div class="flex justify-center">
-				<button
-					class="rounded-md px-8 py-1.5 shadow-sm font-semibold hover:shadow-darkAccent shadow-baseAccent hover:bg-darkAccent bg-baseAccent text-baseBlack"
-				>
-					<p>Login</p>
-				</button>
+	    	<Button @click="submit" text="Login" />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+	// @ts-nocheck
+  import { ref } from 'vue';
 
-// const passwordVisible = ref(false);
+	import Button from '../components/Button.vue';
+
+  const login = ref('');
+  const password = ref('');
+
+  async function submit() {
+    if ( login.value !== '' && password.value !== '' ) {
+      const response = await fetch(`http://127.0.0.1:8000/login`,
+        {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          },
+          body: JSON.stringify({
+            "login": login.value,
+            "password": password.value
+          })
+        }
+      );
+
+      login.value = '';
+      password.value = '';
+
+			const res = await response.json()
+      console.log(res);
+    } else {
+      alert('Нельзя оставлять поля пустыми!')
+    };
+  };
+
+	function passwordVisible(_e: any) {
+		if (document.getElementById('visible')?.classList.contains('visible')) {
+			document.getElementById('password')?.removeAttribute("type")
+		} else {
+			document.getElementById('password')?.setAttribute("type", "password")
+		}
+
+		document.getElementById('visible')?.classList.toggle('visible');
+		document.getElementById('visible')?.classList.toggle('invisible');
+
+		document.getElementById('invisible')?.classList.toggle('visible');
+		document.getElementById('invisible')?.classList.toggle('invisible');
+	};
 </script>
 
 <style>
