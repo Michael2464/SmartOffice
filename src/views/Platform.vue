@@ -33,7 +33,7 @@
       <Option 
         title = "Local Services" 
         image = "/images/localServices.png"
-        link = "" 
+        link = "/services" 
       />
     </div>
 

@@ -2,18 +2,21 @@
 	<header class="flex items-center w-full py-2 px-8 text-baseWhite bg-darkColor">
 	  <img class="h-16 rounded-lg" src="/images/smart_office.png">
 
-		<nav class="ms-8 px-6 space-x-8">
-			<router-link to="/">Home</router-link>
-			<router-link to="/registration">Registration</router-link>
-			<router-link to="/login">Login</router-link>
-			<router-link to="/a">Info</router-link>
-			<router-link to="/b">Products</router-link>
-			<router-link to="/c">Contact</router-link>
-			<router-link to="/platform">Platform</router-link>
+		<nav class="ms-8 px-6 space-x-4">
+			<router-link class="p-2" to="/">Home</router-link>
+			<router-link class="p-2" to="/platform">Platform</router-link>
+			<router-link class="p-2" to="/news">News</router-link>
+			<!-- <router-link class="p-2" to="/a">Products</router-link> -->
+			<!-- <router-link class="p-2" to="/b">Contact</router-link> -->
 		</nav>
   
-	  <!-- Later it might be an image -->
-	  <button class="ml-auto p-4">Options</button>
+		<!-- Later it might be an image -->
+		<div class="ml-auto space-x-2">
+			<router-link class="p-2" to="/login">Login</router-link>
+			<router-link class="p-2" to="/registration">Registration</router-link>
+			<!-- <button class="p-2">Options</button> -->
+		</div>
+
 	</header>
 </template>
 

@@ -6,6 +6,8 @@ import Registration from '../views/Registration.vue';
 import Platform from '../views/Platform.vue';
 import News from '../views/News.vue';
 import Contacts from '../views/Contacts.vue';
+import Services from '../views/Services.vue';
+import AiChat from '../views/AiChat.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,6 +39,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/contacts',
     name: 'contacts',
     component: Contacts
+  },
+  {
+    path: '/services',
+    name: 'Local Services',
+    component: Services
+  },
+  {
+    path: '/aiChat',
+    name: 'AI Chat',
+    component: AiChat
   }
 ];
 
