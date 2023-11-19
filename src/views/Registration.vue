@@ -4,7 +4,7 @@
     style="background-image: url('/images/skyskipers.png')"
   >
     <div class="rounded-xl w-fit m-auto text-baseWhite bg-baseColor">
-      <form class="p-2" action="#">
+      <div class="p-2" action="#">
         <div class="p-2">
           <h2 class="w-fit text-3xl font-semibold">Registration</h2>
           <p>Welcome!</p>
@@ -100,7 +100,7 @@
         <div class="flex justify-center">
           <Button class="mt-3 mb-1" @click="submit" text="Sign Up" />
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
@@ -108,6 +108,7 @@
 <script setup lang="ts">
   // @ts-nocheck
   import { ref } from 'vue';
+  import { supabase } from '../lib/supabaseClient';
 
   import Button from '../components/Button.vue';
 
@@ -120,49 +121,25 @@
   const gender = ref('');
 
   async function submit() {
-    if (
-      full_name.value !== '' &&
-      company.value !== '' &&
-      phone_number.value !== '' &&
-      email.value !== '' &&
-      password.value !== '' &&
-      reply_password.value !== '' &&
-      gender.value !== ''
-    ) {
-      if ( password.value === reply_password.value ) {
-        const response = await fetch(`http://127.0.0.1:8000/registration`,
-          {
-            method: "POST",
-            headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*"
-            },
-            body: JSON.stringify({
-              "fullName": full_name.value,
-              "company": company.value,
-              "phone": phone_number.value,
-              "email": email.value,
-              "password": password.value,
-              "gender": gender.value
-            })
+    if (password.value == reply_password.value) {
+      const { data, error } = await supabase.auth.signUp({
+        email: email.value,
+        password: password.value,
+        options: {
+          data: {
+            full_name: full_name.value,
+            company: company.value,
+            phone_number: phone_number.value,
+            gender: gender.value
           }
-        );
-  
-        full_name.value = '';
-        company.value = '';
-        phone_number.value = '';
-        email.value = '';
-        password.value = '';
-        reply_password.value = '';
-        gender.value = '';
-  
-        response.json();
-      } else {
-        alert('Passwords must match!')
+        }
+      });
+
+      if (data.user !== null) {
+        window.open("http://localhost:3000/platform", "_self");
       };
     } else {
-      alert('Fields cannot be left blank!')
+      alert("Passwords must match!")
     };
   };
 </script>

@@ -31,6 +31,9 @@
 					<button class="text-lightColor">Forgot password</button>
 				</div>
 			</div>
+			<div>
+				<p id="uncorrect_text" class="font-bold text-red-500 text-center h-0 invisible">Uncorrect password of login</p>
+			</div>
 			<div class="flex justify-center">
 	    	<Button @click="submit" text="Login" />
 			</div>
@@ -41,6 +44,7 @@
 <script setup lang="ts">
 	// @ts-nocheck
   import { ref } from 'vue';
+	import { supabase } from '../lib/supabaseClient';
 
 	import Button from '../components/Button.vue';
 
@@ -48,33 +52,26 @@
   const password = ref('');
 
   async function submit() {
-    if ( login.value !== '' && password.value !== '' ) {
-      const response = await fetch(`http://127.0.0.1:8000/login`,
-        {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
-          },
-          body: JSON.stringify({
-            "login": login.value,
-            "password": password.value
-          })
-        }
-      );
+		if ( login.value !== '' && password.value !== '' ) {
+			const { data, error } = await supabase.auth.signInWithPassword({
+				email: login.value,
+				password: password.value
+			});
 
-      login.value = '';
-      password.value = '';
+			if (data.session !== null) {
+				window.open("http://localhost:3000/platform", "_self");
+			} else {
+				document.getElementById('uncorrect_text').classList.remove('h-0', 'invisible');
+			};
 
-			const res = await response.json()
-      console.log(res);
+			login.value = '';
+			password.value = '';
     } else {
       alert('Нельзя оставлять поля пустыми!')
     };
   };
 
-	function passwordVisible(_e: any) {
+	function passwordVisible(_e) {
 		if (document.getElementById('visible')?.classList.contains('visible')) {
 			document.getElementById('password')?.removeAttribute("type")
 		} else {
