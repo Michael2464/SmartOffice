@@ -136,7 +136,7 @@
       });
 
       if (data.user !== null) {
-        window.open("http://localhost:3000/platform", "_self");
+        window.open("/platform", "_self");
       };
     } else {
       alert("Passwords must match!")
