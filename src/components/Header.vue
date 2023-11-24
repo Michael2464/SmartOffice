@@ -9,7 +9,7 @@
   
 		<div class="ml-auto">
 			<div v-if="isAuthorized !== undefined && isAuthorized === true" class="flex space-x-2">
-				<p class="p-2">{{ email }}</p>
+				<p class="p-2">{{ full_name }}</p>
 				<button class="w-max p-2" @click="signOut()">Sign Out</button>
 			</div>
 			<div v-if="isAuthorized !== undefined && isAuthorized === false" class="flex space-x-2">
@@ -25,12 +25,12 @@
 import { ref, Ref } from 'vue';
 import { supabase } from '../lib/supabaseClient';
 
-const email: Ref<string> = ref("");
+const full_name: Ref<string> = ref("");
 const isAuthorized: Ref<boolean | undefined> = ref(undefined);
 
 supabase.auth.getUser().then(({ data, error }) => {
 	if (data.user !== null) {
-		email.value = `${data.user?.email}`;
+		full_name.value = `${data.user.user_metadata.full_name}`;
 		isAuthorized.value = true;
 	} else {
 		isAuthorized.value = false;
