@@ -93,7 +93,7 @@
 			document.getElementById('uncorrect_email').classList.add('h-0', 'invisible');
 			document.getElementById('uncorrect_text').classList.add('h-0', 'invisible');
 
-			supabase.auth.resetPasswordForEmail(login.value);
+			supabase.auth.signInWithOtp({ email: login.value });
 		} else {
 			document.getElementById('restore_password').classList.add('h-0', 'invisible');
 			document.getElementById('uncorrect_email').classList.remove('h-0', 'invisible');
