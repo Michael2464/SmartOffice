@@ -39,7 +39,7 @@ supabase.auth.getUser().then(({ data, error }) => {
 
 function signOut() {
 	supabase.auth.signOut().then(() => {
-		window.open("http://localhost:3000/", "_self");
+		window.open("/", "_self");
 	});
 };
 </script>
