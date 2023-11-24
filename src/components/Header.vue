@@ -6,8 +6,6 @@
 			<router-link class="p-2" to="/">Home</router-link>
 			<router-link class="p-2" to="/platform">Platform</router-link>
 		</nav>
-
-		<button @click="isAuthorized = !isAuthorized">Click Me!</button>
   
 		<div class="ml-auto">
 			<div v-if="isAuthorized !== undefined && isAuthorized === true" class="flex space-x-2">
