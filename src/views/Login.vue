@@ -17,22 +17,24 @@
 				<div class="flex w-full">
 					<input v-model="password" id="password" class="w-[calc(100%-32px)] rounded-md p-1 bg-lightColor" type="password">
 					<div class="w-8 h-8 shrink-0 me-0.5" @click="passwordVisible">
-						<div id="visible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat visible" style="background-image: url('/icons/visibility.svg');"></div>
-						<div id="invisible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat invisible" style="background-image: url('/icons/visibility_off.svg');"></div>
+						<div v-if="isVisible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat" style="background-image: url('/icons/visibility.svg');"></div>
+						<div v-if="!isVisible" class="w-7 h-7 p-0.5 m-0.5 absolute bg-center bg-contain bg-origin-content hover:bg-origin-padding bg-no-repeat" style="background-image: url('/icons/visibility_off.svg');"></div>
 					</div>
 				</div>
 			</div>
-			<div class="flex space-x-8">
-				<div class="space-x-1">
+			<div class="flex flex-row-reverse space-x-8">
+				<!-- <div class="space-x-1">
 					<input type="checkbox" name="remember">
 					<span>Remember me</span>
-				</div>
+				</div> -->
 				<div>
-					<button class="text-lightColor">Forgot password</button>
+					<button class="text-lightColor" @click="restorePassword">Forgot password</button>
 				</div>
 			</div>
 			<div>
-				<p id="uncorrect_text" class="font-bold text-red-500 text-center h-0 invisible">Uncorrect password of login</p>
+				<p id="restore_password" class="font-bold text-center h-0 invisible">Check Your Email ({{ login }})</p>
+				<p id="uncorrect_email" class="font-bold text-red-500 text-center h-0 invisible">Enter email address</p>
+				<p id="uncorrect_text" class="font-bold text-red-500 text-center h-0 invisible">Invalid login password</p>
 			</div>
 			<div class="flex justify-center">
 	    	<Button @click="submit" text="Login" />
@@ -61,6 +63,8 @@
 			if (data.session !== null) {
 				window.open("/platform", "_self");
 			} else {
+				document.getElementById('restore_password').classList.add('h-0', 'invisible');
+				document.getElementById('uncorrect_email').classList.add('h-0', 'invisible');
 				document.getElementById('uncorrect_text').classList.remove('h-0', 'invisible');
 			};
 
@@ -71,18 +75,30 @@
     };
   };
 
+	const isVisible = ref(false);
+
 	function passwordVisible(_e) {
-		if (document.getElementById('visible')?.classList.contains('visible')) {
+		isVisible.value = !isVisible.value;
+
+		if (isVisible.value) {
 			document.getElementById('password')?.removeAttribute("type")
 		} else {
 			document.getElementById('password')?.setAttribute("type", "password")
-		}
+		};
+	};
 
-		document.getElementById('visible')?.classList.toggle('visible');
-		document.getElementById('visible')?.classList.toggle('invisible');
+	function restorePassword(_e) {
+		if (login.value !== '') {
+			document.getElementById('restore_password').classList.remove('h-0', 'invisible');
+			document.getElementById('uncorrect_email').classList.add('h-0', 'invisible');
+			document.getElementById('uncorrect_text').classList.add('h-0', 'invisible');
 
-		document.getElementById('invisible')?.classList.toggle('visible');
-		document.getElementById('invisible')?.classList.toggle('invisible');
+			supabase.auth.resetPasswordForEmail(login.value);
+		} else {
+			document.getElementById('restore_password').classList.add('h-0', 'invisible');
+			document.getElementById('uncorrect_email').classList.remove('h-0', 'invisible');
+			document.getElementById('uncorrect_text').classList.add('h-0', 'invisible');
+		};
 	};
 </script>
 

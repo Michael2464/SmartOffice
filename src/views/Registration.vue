@@ -65,7 +65,7 @@
               v-model="password"
               name="password"
               class="bg-lightColor grow rounded-md ps-1.5 py-0.5"
-              type="text"
+              type="password"
               placeholder="Enter password"
               required
             >
@@ -77,7 +77,7 @@
               v-model="reply_password"
               name="reply_password"
               class="bg-lightColor grow rounded-md ps-1.5 py-0.5"
-              type="text"
+              type="password"
               placeholder="Confirm password"
               required
             >
