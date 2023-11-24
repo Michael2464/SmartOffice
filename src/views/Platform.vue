@@ -15,7 +15,7 @@
         <Option 
           title = "Documents" 
           image = "/images/documents.png"
-          link = "" 
+          link = "/documents" 
         />
       </div>
   
