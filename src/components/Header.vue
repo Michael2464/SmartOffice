@@ -6,13 +6,15 @@
 			<router-link class="p-2" to="/">Home</router-link>
 			<router-link class="p-2" to="/platform">Platform</router-link>
 		</nav>
+
+		<button @click="isAuthorized = !isAuthorized">Click Me!</button>
   
-		<div class="relative h-10 ml-auto">
-			<div v-if="isAuthorized !== undefined && isAuthorized === true" class="absolute flex top-0 right-0 space-x-2">
+		<div class="ml-auto">
+			<div v-if="isAuthorized !== undefined && isAuthorized === true" class="flex space-x-2">
 				<p class="p-2">{{ email }}</p>
 				<button class="w-max p-2" @click="signOut()">Sign Out</button>
 			</div>
-			<div v-if="isAuthorized !== undefined && isAuthorized === false" class="absolute flex top-0 right-0 space-x-2">
+			<div v-if="isAuthorized !== undefined && isAuthorized === false" class="flex space-x-2">
 				<router-link class="p-2" to="/login">Login</router-link>
 				<router-link class="p-2" to="/registration">Registration</router-link>
 			</div>
