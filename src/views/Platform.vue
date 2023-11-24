@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full h-[calc(100vh-160px)] flex flex-col items-center justify-center bg-baseColor text-baseWhite">
-    <div id="platform_authorized" class="absolute invisible">
+    <div v-if="isAuthorized !== undefined && isAuthorized === true" class="absolute">
       <div class="flex items-center space-x-8">
         <Option 
           title = "News" 
@@ -37,7 +37,7 @@
         />
       </div>
     </div>
-    <div id="platform_unauthorized" class="absolute">
+    <div v-if="isAuthorized !== undefined && isAuthorized === false" class="absolute">
       <h3 class="text-3xl p-4 rounded-xl bg-darkColor">You must be authorized!</h3>
     </div>
   </div>
@@ -47,13 +47,17 @@
 
 <script setup lang="ts">
   // @ts-nocheck
+  import { ref, Ref } from 'vue';
   import Option from '../components/Option.vue';
   import { supabase } from '../lib/supabaseClient';
 
+  const isAuthorized: Ref<boolean | undefined> = ref(undefined);
+
   supabase.auth.getUser().then(({ data, error }) => {
     if (data.user !== null) {
-      document.getElementById('platform_authorized')?.classList.remove('invisible');
-      document.getElementById('platform_unauthorized')?.classList.add('invisible');
+      isAuthorized.value = true;
+    } else {
+      isAuthorized.value = false;
     };
   });
 </script>

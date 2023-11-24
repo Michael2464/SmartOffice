@@ -8,32 +8,32 @@
 		</nav>
   
 		<div class="relative h-10 ml-auto">
-			<div id="header_unauthorized" class="absolute flex top-0 right-0 space-x-2">
-				<router-link class="p-2" to="/login">Login</router-link>
-				<router-link class="p-2" to="/registration">Registration</router-link>
-			</div>
-			<div id="header_authorized" class="absolute flex top-0 right-0 invisible">
+			<div v-if="isAuthorized !== undefined && isAuthorized === true" class="absolute flex top-0 right-0 space-x-2">
 				<p class="p-2">{{ email }}</p>
 				<button class="w-max p-2" @click="signOut()">Sign Out</button>
 			</div>
+			<div v-if="isAuthorized !== undefined && isAuthorized === false" class="absolute flex top-0 right-0 space-x-2">
+				<router-link class="p-2" to="/login">Login</router-link>
+				<router-link class="p-2" to="/registration">Registration</router-link>
+			</div>
 		</div>
-
 	</header>
 </template>
 
 <script setup lang="ts">
 // @ts-nocheck
-import { ref } from 'vue';
+import { ref, Ref } from 'vue';
 import { supabase } from '../lib/supabaseClient';
 
-const email = ref("");
-supabase.auth.getUser().then(({ data, _error }) => {
+const email: Ref<string> = ref("");
+const isAuthorized: Ref<boolean | undefined> = ref(undefined);
+
+supabase.auth.getUser().then(({ data, error }) => {
 	if (data.user !== null) {
 		email.value = `${data.user?.email}`;
-		document.getElementById('header_authorized')?.classList.remove('invisible');
-		document.getElementById('header_unauthorized')?.classList.add('invisible');
+		isAuthorized.value = true;
 	} else {
-
+		isAuthorized.value = false;
 	};
 });
 
