@@ -36,21 +36,21 @@
 
     <div class="flex justify-between space-x-8">
       <Contact 
-        image = "/images/shockedEmployee.jpg" 
-        name = "Alexander Beliov"
-        age = "18 y.o."
-        email = "private"
-        phone = "private"
-        post = "fullstack developer" 
+        image = "/images/man.jpg" 
+        name = "Tom Right"
+        age = "34 y.o."
+        email = "tom_right_email@gmail.com"
+        phone = "+7999 999 99 99"
+        post = "Backend developer" 
         link = ""
       />
 
       <Contact 
-        image = "/images/shockedEmployee.jpg" 
-        name = "Tim Mad"
+        image = "/images/man2.jpg" 
+        name = "Tim Coke"
         age = "23 y.o."
         email = "idontgiveu@gmail.com"
-        phone = "+79099999999"
+        phone = "+7 909 999 99 99"
         post = "AI engineer" 
         link = ""
       />

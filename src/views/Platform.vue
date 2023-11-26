@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[calc(100vh-160px)] flex flex-col items-center justify-center bg-baseColor text-baseWhite">
-    <div v-if="isAuthorized !== undefined && isAuthorized === true" class="space-y-12">
+    <div v-if="isAuthorized !== undefined && isAuthorized === false" class="space-y-12">
       <div class="flex items-center space-x-8">
         <Option image = "/images/news.png" link = "/news">
           <p class="text-center mt-2 text-md sm:text-xl md:text-2xl max-w-xl">News</p>
@@ -25,7 +25,7 @@
         </Option>
       </div>
     </div>
-    <div v-if="isAuthorized !== undefined && isAuthorized === false">
+    <div v-if="isAuthorized !== undefined && isAuthorized === true">
       <h3 class="text-3xl p-4 rounded-xl bg-darkColor">You must be authorized!</h3>
     </div>
   </div>
